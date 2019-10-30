@@ -10,7 +10,7 @@
 
 
 2. 生成token需要勾选repo权限(请保存下来，后面会用到)
-![master/static/images/help2.png](master/static/images/help2.png)
+![./static/images/help2.png](./static/images/help2.png)
 
 
 3. 进入小程序，点击我的，输入github用户名，第2步中的token，以及加密密钥(加密密钥格式是16位字母或数字)
