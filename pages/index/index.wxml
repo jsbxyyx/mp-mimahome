@@ -1,0 +1,12 @@
+<!--
+ @author jsbxyyx
+ -->
+<!--index.wxml-->
+<scroll-view class="list-block">
+  <view bindtap='edit' data-id='{{item.id}}' class="item-content" wx:for="{{list}}" wx:key="{{item.id}}">
+    <view class='item-inner'>
+      <view class="item-title">{{item.type}}</view>
+      <view class="item-after">{{item.username}}</view>
+    </view>
+  </view>
+</scroll-view>

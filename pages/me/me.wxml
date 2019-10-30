@@ -1,0 +1,50 @@
+<!--
+ @author jsbxyyx
+ -->
+<!--pages/me/me.wxml-->
+<view>
+  <form bindsubmit='save'>
+    <view class='list-block {{hideGithub}}'>
+      <view class='item-content'>
+        <view class='item-inner'>
+          <view class='item-title label'>
+            <span class="required-input">*</span>用户名
+          </view>
+          <view class='item-input'>
+            <input name="username" type='text' value="{{me.username}}" placeholder='请输入github用户名' />
+          </view>
+        </view>
+      </view>
+
+      <view class='item-content'>
+        <view class='item-inner'>
+          <view class='item-title label'>
+            <span class="required-input">*</span>token
+          </view>
+          <view class='item-input'>
+            <input name="token" type='text' value="{{me.token}}" placeholder='请输入github token' />
+          </view>
+        </view>
+      </view>
+
+      <view class='item-content'>
+        <view class='item-inner'>
+          <view class='item-title label'>
+            <span class="required-input">*</span>加密密钥
+          </view>
+          <view class='item-input'>
+            <input name="secret" type='text' value="{{me.secret}}" placeholder='请输入加密密钥' />
+          </view>
+        </view>
+      </view>
+
+      <view class='content-block'>
+        <button class="weui-btn" type="primary" form-type='submit'>保存</button>
+      </view>
+      <view class='item-content'>
+        <navigator url='/pages/help/help'>查看帮助</navigator>
+      </view>
+    </view>
+  </form>
+
+</view>

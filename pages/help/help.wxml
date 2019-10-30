@@ -1,0 +1,24 @@
+<!--
+ @author jsbxyyx
+ -->
+<!--pages/help/help.wxml-->
+<view>
+  <view class='txt-center'>帮助</view>
+  <view class='row-empty'></view>
+  <view class='item-content'>
+    <view>1. 登录 GitHub，在 Settings -> Developer settings -> Personal access tokens 下，点击Generate new token 生成一个访问token</view>
+    <view class='row-empty'></view>
+    <view>2. 生成的 token 需要勾选 repo 权限，保存生成的 token</view>
+    <image src="/static/images/help2.png" mode="aspectFit"></image>
+    <view>3. 依次输入用户名、token、加密密钥(加密密钥格式是16位字母或数字)</view>
+    <view class='row-empty'></view>
+    <view class='error'>重要的事情说三遍：</view>
+    <view class='error'>一定要保存好加密密钥!!!</view>
+    <view class='error'>一定要保存好加密密钥!!!</view>
+    <view class='error'>一定要保存好加密密钥!!!</view>
+    <view class='row-empty'></view>
+    <view>如果你觉得这个小程序好用，可以分享给你的朋友，也可以选择请我喝茶（保存下面的二维码，打开微信扫一扫）</view>
+    <image src="/static/images/wxpay.png" mode="aspectFit"></image>
+    <button bindtap="goIndex">返回首页</button>
+  </view>
+</view>

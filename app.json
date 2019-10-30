@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/add/add",
+    "pages/me/me",
+    "pages/help/help"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "密码Home",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/static/images/fly.png",
+        "selectedIconPath": "/static/images/fly-active.png",
+        "text": "账号"
+      },
+      {
+        "pagePath": "pages/add/add",
+        "iconPath": "/static/images/add.png",
+        "selectedIconPath": "/static/images/add-active.png",
+        "text": "添加"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "iconPath": "/static/images/user.png",
+        "selectedIconPath": "/static/images/user-active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}
