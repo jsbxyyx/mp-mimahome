@@ -8,13 +8,13 @@
   <view class='item-content'>
   <!--
     <view>GitHub帐号</view>
-    <view>1. 登录 GitHub(https://github.com, 没有帐号请注册)，在 右上角头像 -> Settings -> Developer settings -> Personal access tokens 下，点击Generate new token 生成一个访问token</view>
+    <view>1. 登录 gitHub.com(没有帐号请注册，本应用跟github无任何关系)，在 右上角头像 -> Settings -> Developer settings -> Personal access tokens 下，点击Generate new token 生成一个访问token</view>
     <view class='row-empty'></view>
     <view>2. 生成的 token 需要勾选 repo 权限，保存生成的 token</view>
     <image src="/static/images/help2.png" mode="aspectFit"></image>
   -->
     <view>Gitee帐号</view>
-    <view>1. 登录 Gitee(https://gitee.com, 没有帐号请注册)，在 右上角头像 -> 设置 -> 私人令牌 -> 生成新令牌</view>
+    <view>1. 登录 gitee.com(没有帐号请自行注册，本应用跟gitee无任何关系)，在 右上角头像 -> 设置 -> 私人令牌 -> 生成新令牌</view>
     <view class='row-empty'></view>
     <view>2. 生成的 token 需要勾选 repo 权限，保存生成的 token</view>
     <image src="/static/images/help3.png" mode="aspectFit"></image>
