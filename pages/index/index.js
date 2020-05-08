@@ -26,6 +26,9 @@ Page({
         for (let i in data) {
           let obj = data[i];
           let splits = dao.parsePath(obj.name);
+          if (splits[1] == '' || splits[0] == '') {
+            continue;
+          }
           list.push({ id: obj.name, username: splits[1], type: splits[0] });
         }
         that.setData({ list: list });
@@ -45,7 +48,7 @@ Page({
   * 生命周期函数--监听页面显示
   */
   onShow: function () {
-    this.load();
+    // this.load();
   },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
@@ -63,9 +66,9 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-    let that = this;
-    setTimeout(function () {
-      that.setData({ list: [] });
-    }, 1000);
+    // let that = this;
+    // setTimeout(function () {
+    //   that.setData({ list: [] });
+    // }, 1000);
   }
 })

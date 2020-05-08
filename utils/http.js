@@ -28,7 +28,7 @@ function exchange(options) {
       if (statusCode == 401) {
         wx.showModal({
           title: '提示',
-          content: '您还未设置github相关信息，请完善！',
+          content: '您还未设置用户名，token相关信息，请完善！',
           showCancel: false,
           success: function(res) {
             if(res.confirm) {
@@ -42,7 +42,10 @@ function exchange(options) {
         success(res);
       }
     },
-    fail: fail,
+    fail: function(error) {
+      console.log(error);
+      fail(error);
+    },
     complete: complete
   })
 

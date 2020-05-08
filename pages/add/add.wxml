@@ -7,51 +7,32 @@
     <input type="hidden" name="id" value="{{account.id}}"/>
   </view>
 
-  <view class='list-block'>
-    <view class='item-content'>
-      <view class='item-inner'>
-        <view class='item-title label'>
-          <span class="required-input">*</span>类型
-        </view>
-        <view class='item-input'>
-           <input name="type" type='text' placeholder="例如：新浪邮箱" value="{{account.type}}"/>
-        </view>
-      </view>
-    </view>
-
-    <view class='item-content'>
-      <view class='item-inner'>
-        <view class='item-title label'>
-          <span class="required-input">*</span>账号
-        </view>
-        <view class='item-input'>
-           <input name="username" type='text' placeholder="例如：xx@sina.com" value="{{account.username}}"/>
-        </view>
-      </view>
-    </view>
-
-    <view class='item-content'>
-      <view class='item-inner'>
-        <view class='item-title label'>
-          <span class="required-input">*</span>密码
-        </view>
-        <view class='item-input'>
-          <input name="password" wx:if="{{isPassword}}" type='password' placeholder="例如：123456" value="{{account.password}}"/>
-          <input name="password" wx:else type="text" placeholder="例如：123456" value="{{account.password}}" />
-        </view>
-      </view>
-    </view>
-
-    <view class='content-block'>
-      <button class="weui-btn" type="primary" form-type='submit'>保存</button>
+  <view class="weui-cell weui-cell_active">
+    <view class="weui-cell__hd"><label class="weui-label">类型</label></view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder-class="weui-input__placeholder" name="type" type='text' placeholder="例如：新浪邮箱" value="{{account.type}}"/>
     </view>
   </view>
-  <view class="content-block">
-    <button class="weui-btn" bindtap="viewpasswd">查看密码</button>
+
+  <view class="weui-cell weui-cell_active">
+    <view class="weui-cell__hd"><label class="weui-label">账号</label></view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder-class="weui-input__placeholder" name="username" type='text' placeholder="例如：xx@sina.com" value="{{account.username}}"/>
+    </view>
   </view>
-  <view class="content-block">
-    <button class="weui-btn {{clsType}}" bindtap="deleteAccount" type="warn">删除</button>
+
+  <view class="weui-cell weui-cell_active">
+    <view class="weui-cell__hd"><label class="weui-label">密码</label></view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" placeholder-class="weui-input__placeholder" name="password" wx:if="{{isPassword}}" type='password' placeholder="例如：123456" value="{{account.password}}"/>
+      <input class="weui-input" placeholder-class="weui-input__placeholder" name="password" wx:else type="text" placeholder="例如：123456" value="{{account.password}}" />
+    </view>
   </view>
-  
+
+  <view class="weui-form__opr-area">
+    <button class="weui-btn weui-btn_primary" type="primary" form-type='submit'>保存</button>
+    <button class="weui-btn weui-btn_disabled weui-btn_default" bindtap="viewpasswd">查看密码</button>
+    <button class="weui-btn weui-btn_disabled weui-btn_warn {{clsType}}" bindtap="deleteAccount" type="warn">删除</button>
+  </view>
 
 </form>

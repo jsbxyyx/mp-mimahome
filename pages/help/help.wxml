@@ -6,11 +6,20 @@
   <view class='txt-center'>帮助</view>
   <view class='row-empty'></view>
   <view class='item-content'>
-    <view>1. 登录 GitHub，在 Settings -> Developer settings -> Personal access tokens 下，点击Generate new token 生成一个访问token</view>
+  <!--
+    <view>GitHub帐号</view>
+    <view>1. 登录 GitHub(https://github.com, 没有帐号请注册)，在 右上角头像 -> Settings -> Developer settings -> Personal access tokens 下，点击Generate new token 生成一个访问token</view>
     <view class='row-empty'></view>
     <view>2. 生成的 token 需要勾选 repo 权限，保存生成的 token</view>
     <image src="/static/images/help2.png" mode="aspectFit"></image>
-    <view>3. 依次输入用户名、token、加密密钥(加密密钥格式是16位字母或数字)</view>
+  -->
+    <view>Gitee帐号</view>
+    <view>1. 登录 Gitee(https://gitee.com, 没有帐号请注册)，在 右上角头像 -> 设置 -> 私人令牌 -> 生成新令牌</view>
+    <view class='row-empty'></view>
+    <view>2. 生成的 token 需要勾选 repo 权限，保存生成的 token</view>
+    <image src="/static/images/help3.png" mode="aspectFit"></image>
+    <view class='row-empty'></view>
+    <view>3. 回到小程序我的页面，依次输入用户名、token、加密密钥(加密密钥格式是16位字母或数字)</view>
     <view class='row-empty'></view>
     <view class='error'>重要的事情说三遍：</view>
     <view class='error'>一定要保存好加密密钥!!!</view>

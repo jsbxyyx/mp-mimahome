@@ -5,46 +5,49 @@
 <view>
   <form bindsubmit='save'>
     <view class='list-block {{hideGithub}}'>
-      <view class='item-content'>
-        <view class='item-inner'>
-          <view class='item-title label'>
-            <span class="required-input">*</span>用户名
-          </view>
-          <view class='item-input'>
-            <input name="username" type='text' value="{{me.username}}" placeholder='请输入github用户名' />
-          </view>
+      <view class="weui-cells weui-cells_form">
+      <view class="weui-cell weui-cell_active weui-cell_select weui-cell_select-after">
+        <view class="weui-cell__hd">
+          <label class="weui-label" style="width: 3em">平台</label>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="bindPickerChange" range="{{platform}}">
+              <view class="weui-select">{{platform[platformIndex]}}</view>
+          </picker>
+        </view>
+      </view>
+					
+      <view class="weui-cell weui-cell_active">
+        <view class="weui-cell__hd"><label class="weui-label">用户名</label></view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder-class="weui-input__placeholder" name="username" type='text' value="{{me.username}}" placeholder="请输入用户名"/>
         </view>
       </view>
 
-      <view class='item-content'>
-        <view class='item-inner'>
-          <view class='item-title label'>
-            <span class="required-input">*</span>token
-          </view>
-          <view class='item-input'>
-            <input name="token" type='text' value="{{me.token}}" placeholder='请输入github token' />
-          </view>
+      <view class="weui-cell weui-cell_active">
+        <view class="weui-cell__hd"><label class="weui-label">token</label></view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder-class="weui-input__placeholder" name="token" type='text' value="{{me.token}}" placeholder='请输入token'/>
         </view>
       </view>
 
-      <view class='item-content'>
-        <view class='item-inner'>
-          <view class='item-title label'>
-            <span class="required-input">*</span>加密密钥
-          </view>
-          <view class='item-input'>
-            <input name="secret" type='text' value="{{me.secret}}" placeholder='请输入加密密钥' />
-          </view>
+      <view class="weui-cell weui-cell_active">
+        <view class="weui-cell__hd"><label class="weui-label">加密密钥</label></view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder-class="weui-input__placeholder" name="secret" type='text' value="{{me.secret}}" placeholder='请输入加密密钥'/>
         </view>
       </view>
-
-      <view class='content-block'>
-        <button class="weui-btn" type="primary" form-type='submit'>保存</button>
-      </view>
-      <view class='item-content'>
-        <navigator url='/pages/help/help'>查看帮助</navigator>
+      <view class="weui-form__opr-area">
+        <button class="weui-btn weui-btn_primary" type="primary" form-type='submit'>保存</button>
       </view>
     </view>
+    </view>
   </form>
-
+  <view class="weui-form__extra-area">
+    <view class="weui-footer">
+      <view class="weui-footer__links">
+        <navigator url='/pages/help/help' class="weui-footer__link">查看帮助</navigator>
+      </view>
+    </view>
+  </view>
 </view>

@@ -16,6 +16,9 @@ Page({
   data: {
     hideSync: 'hide',
     hideGithub: 'hide',
+    // platform: ['Gitee', 'GitHub'],
+    platform: ['Gitee'],
+    platformIndex: 0
   },
 
   /**
@@ -32,6 +35,7 @@ Page({
     let username = val.username;
     let token = val.token;
     let secret = val.secret;
+    let platform = that.data.platform[that.data.platformIndex];
     if (util.isEmpty(username) ||
       util.isEmpty(token) ||
       util.isEmpty(secret)) {
@@ -48,6 +52,15 @@ Page({
         icon: 'none',
         duration: 2000,
       });
+      return;
+    }
+    if (secret == '1234567812345678') {
+      wx.showToast({
+        title: '请不要使用1234567812345678作为密钥',
+        icon: 'none',
+        duration: 2000,
+      });
+      return ;
     }
     let localUsername = dao.getUsername();
     if (!util.isEmpty(localUsername)) {
@@ -56,17 +69,17 @@ Page({
         content: '本地存在用户名，token，密钥信息，是否覆盖？',
         success: function(res) {
           if (res.confirm) {
-            that.create(username, token, secret);
+            that.create(platform, username, token, secret);
           }
         }
       })
       return;
     }
-    that.create(username, token, secret);
+    that.create(platform, username, token, secret);
   },
-  create: function(username, token, secret) {
+  create: function(platform, username, token, secret) {
     let that = this;
-    dao.saveUsernameTokenSecret(username, token, secret, function (data, statusCode, header) {
+    dao.saveUsernameTokenSecret(platform, username, token, secret, function (data, statusCode, header) {
       if (statusCode == 404) {
         wx.showToast({
           title: '请开通相应的权限！！！',
@@ -86,6 +99,11 @@ Page({
         url: '/pages/index/index',
       });
     });
+  },
+  bindPickerChange: function(e) {
+    this.setData({
+      platformIndex: e.detail.value
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
