@@ -108,7 +108,7 @@ function _deleteFile(token, user, repo, path, sha, callback) {
       repo: '',
       branch: 'master',
       path: '',
-      message: '',
+      message: 'Update message by 密码Home',
       sha: sha
     },
     header: {
