@@ -2,11 +2,24 @@
  @author jsbxyyx
  -->
 <!--index.wxml-->
+<view class="weui-search-bar weui-search-bar_focusing" style="background-color:var(--weui-BG-2);">
+  <view class="weui-search-bar__box">
+      <view class="weui-icon-search"></view>
+      <input type="search" class="weui-search-bar__input" placeholder="搜索" bindinput="searchInput" value="{{keyword}}" />
+      <view class="weui-icon-clear" bindtap="searchClear"></view>
+  </view>
+  <view class="weui-search-bar__label" style="transform-origin: 0px 0px; opacity: 1; transform: scale(1, 1);">
+      <view class="weui-icon-search"></view>
+      <view>搜索</view>
+  </view>
+  <view class="weui-search-bar__cancel-btn" bindtap="searchByKeyword">搜索</view>
+</view>
 <scroll-view>
-  <view class="weui-cells weui-cells_after-title" bindtap='edit' data-id='{{item.id}}' wx:for="{{list}}" wx:key="{{item.id}}">
+  <view class="weui-cells weui-cells_after-title" bindtap='edit' data-id='{{item.id}}' wx:for="{{list}}" wx:key="id">
       <view class="weui-cell">
           <view class="weui-cell__bd">{{item.type}}</view>
           <view class="weui-cell__ft">{{item.username}}</view>
       </view>
   </view>
 </scroll-view>
+<view class="weui-badge" style="position: fixed; bottom: 30rpx; right: 30rpx; background-color: #4caf509c;" bindtap="goTop" data-top="0">↑</view>

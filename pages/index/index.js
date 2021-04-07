@@ -6,10 +6,13 @@
 const app = getApp();
 
 import * as dao from '../../utils/dao.js';
+import * as util from '../../utils/util.js'
 
 Page({
   data: {
-    list: []
+    allList: [],
+    list: [],
+    keyword: '',
   },
   edit: function(e) {
     let obj = e.currentTarget.dataset;
@@ -31,7 +34,10 @@ Page({
           }
           list.push({ id: obj.name, username: splits[1], type: splits[0] });
         }
-        that.setData({ list: list });
+        that.setData({
+          allList: list,
+          list: list
+        });
       } else {
         wx.showToast({
           title: '暂无数据',
@@ -39,6 +45,38 @@ Page({
           duration: 5000
         })
       }
+    });
+  },
+  searchInput: function(e) {
+    let v = e.detail.value;
+    this.setData({
+      keyword: v
+    })
+  },
+  searchClear: function() {
+    this.setData({
+      keyword: ''
+    })
+  },
+  searchByKeyword: function() {
+    let that = this;
+    let keyword = this.data.keyword;
+    if (util.isEmpty(keyword)) {
+      that.setData({
+        list: that.data.allList
+      })
+      return;
+    }
+    let filterList = util.fuzzyQuery(that.data.allList, ['username', 'type'], keyword);
+    that.setData({
+      list: filterList
+    })
+  },
+  goTop: function(e) {
+    let top = e.currentTarget.dataset['top'];
+    wx.pageScrollTo({
+      scrollTop: top,
+      duration: 300
     });
   },
   onLoad: function () {

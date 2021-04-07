@@ -55,10 +55,25 @@ function decrypt(str, key) {
   return decryptedStr.toString();
 }
 
+function fuzzyQuery(list, keys, keyWord) {
+  var reg =  new RegExp(keyWord, 'i');
+  var arr = [];
+  for (var i = 0; i < list.length; i++) {
+    for (var j = 0; j < keys.length; j++) {
+      if (reg.test(list[i][keys[j]])) {
+        arr.push(list[i]);
+        break;
+      }
+    }
+  }
+  return arr;
+}
+
 module.exports = {
   formatTime: formatTime,
   isEmpty: isEmpty,
   Base64: Base64,
   encrypt: encrypt,
   decrypt: decrypt,
+  fuzzyQuery: fuzzyQuery,
 }
