@@ -22,4 +22,5 @@
       </view>
   </view>
 </scroll-view>
-<view class="weui-badge" style="position: fixed; bottom: 30rpx; right: 30rpx; background-color: #4caf509c;" bindtap="goTop" data-top="0">↑</view>
+<view class="weui-badge" style="position: fixed; bottom: 60px; right: 10px; background-color: #4caf509c; width: 30px; height: 40px; font-size: 30px;" bindtap="load" data-top="0">〄</view>
+<view class="weui-badge" style="position: fixed; bottom: 10px; right: 10px; background-color: #4caf509c; width: 30px; height: 40px; font-size: 30px;" bindtap="goTop" data-top="0">↑</view>
